@@ -2,16 +2,114 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>身内向けページ</title>
-  <meta name="robots" content="noindex,nofollow">
+  <title>テトテスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                   "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+    }
+
+    /* ヘッダー（常に上に固定） */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    /* ヘッダー分の余白 */
+    main {
+      padding-top: 80px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 8px;
+    }
+
+    .top-image img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>身内向け共有ページ</h1>
+  <!-- 上に固定される部分 -->
+  <header>
+    <img src="logo.png" alt="テトテスト ロゴ">
+    <h1>テトテスト</h1>
+  </header>
 
-<p>
-このページは、リンクを知っている人だけが見られます。
-</p>
+  <!-- スクロール部分 -->
+  <main>
+
+    <!-- 写真 -->
+    <section class="top-image">
+      <img src="top.jpg" alt="テトテスト イメージ写真">
+    </section>
+
+    <!-- テトテストとは -->
+    <section>
+      <h2>テトテストとは？</h2>
+      <p>
+        テトテストは、○○を目的としたテストです。
+        学習の定着度を確認し、思考力・理解力を測ることを目的としています。
+      </p>
+    </section>
+
+    <!-- サンプル問題 -->
+    <section>
+      <h2>サンプル問題</h2>
+      <ul>
+        <li>問題1：〇〇を求めよ</li>
+        <li>問題2：次の条件を満たすものを選べ</li>
+        <li>問題3：理由を説明せよ</li>
+      </ul>
+    </section>
+
+    <!-- 過去問 -->
+    <section>
+      <h2>過去問</h2>
+      <p>
+        過去に出題された問題を以下に掲載します。
+      </p>
+      <ul>
+        <li><a href="kakomon2023.pdf">2023年度 過去問</a></li>
+        <li><a href="kakomon2024.pdf">2024年度 過去問</a></li>
+      </ul>
+    </section>
+
+  </main>
 
 </body>
 </html>
