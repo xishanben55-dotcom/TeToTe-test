@@ -60,6 +60,34 @@
       border-radius: 8px;
     }
 
+    /* 過去の結果テーブル */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 12px;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse; /* 格子状の線を出す */
+      max-width: 800px;
+      margin: 0 auto;
+      min-width: 480px; /* 小さい画面で横スクロールさせるための最小幅 */
+      border: 1px solid #cfd8dc; /* 外枠の色 */
+    }
+
+    .results-table th,
+    .results-table td {
+      padding: 12px 18px; /* 横方向の余白を広めにして列間に余白を作る */
+      border: 1px solid #cfd8dc; /* セルごとの線（格子） */
+      text-align: center;
+    }
+
+    .results-table th {
+      background: #e6f3ff; /* 薄い青色 */
+      font-weight: 700;
+    }
+
     .btn-back {
       display: inline-block;
       padding: 10px 14px;
