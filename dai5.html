@@ -81,8 +81,53 @@
       margin-top: 12px;
       border-radius: 6px;
     }
+    /* 成績表のスタイル */
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table.score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 15px;
+      min-width: 320px;
+    }
+    table.score-table th,
+    table.score-table td {
+      border: 1px solid #d6eaf8;
+      padding: 10px 12px;
+    }
+    /* 一番上の行を薄い青色に */
+    table.score-table thead th {
+      background: #e1f7ff; /* 薄い青 */
+      color: #0a3b57;
+      font-weight: 600;
+      text-align: center;
+    }
+    table.score-table tbody td {
+      text-align: center;
+    }
+    /* 左列の見出し（行ラベル） */
+    table.score-table tbody th {
+      text-align: left;
+      background: #fafcff;
+      font-weight: 600;
+      width: 35%;
+      padding-left: 14px;
+    }
+    table.score-table tbody tr:last-child {
+      background: #f0faff;
+      color: #0a3b57;
+      font-weight: 600;
+    }
     @media (max-width: 600px) {
       .pdf-frame { height: 400px; }
+      table.score-table thead th,
+      table.score-table tbody th,
+      table.score-table td {
+        padding: 8px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -95,7 +140,54 @@
   <main>
     <section>
       <h2>第5回テトテスト</h2>
-      <p class="notes">以下のリンクをクリックすると、PDFが別タブで開きます。</p>
+      <p class="notes">各大問の平均点・最高点と、問題・解答・全容です。下のリンクをクリックすると、PDFが別タブで開きます。</p>
+    </section>
+
+    <section>
+      <h3>結果</h3>
+      <div class="table-wrap">
+        <table class="score-table" aria-label="成績表（平均点・最高点）">
+          <thead>
+            <tr>
+              <th></th>
+              <th>平均点</th>
+              <th>最高点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">第1問</th>
+              <td>11</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th scope="row">第2問</th>
+              <td>1.8</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th scope="row">第3問</th>
+              <td>4.5</td>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th scope="row">第4問</th>
+              <td>2.3</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th scope="row">第5問</th>
+              <td>4</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th scope="row">全体</th>
+              <td>23.7</td>
+              <td>30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section>
