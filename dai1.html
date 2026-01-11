@@ -81,8 +81,48 @@
       margin-top: 12px;
       border-radius: 6px;
     }
+    /* 成績表のスタイル */
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table.score-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 15px;
+      min-width: 320px;
+    }
+    table.score-table th,
+    table.score-table td {
+      border: 1px solid #d6eaf8;
+      padding: 10px 12px;
+    }
+    /* 一番上の行を薄い青色に */
+    table.score-table thead th {
+      background: #e6f7ff; /* 薄い青 */
+      color: #0a3b57;
+      font-weight: 600;
+      text-align: center;
+    }
+    /* 左列の見出し（行ラベル） */
+    table.score-table tbody th {
+      text-align: left;
+      background: #fafcff;
+      font-weight: 600;
+      width: 35%;
+      padding-left: 14px;
+    }
+    table.score-table tbody td {
+      text-align: center;
+    }
     @media (max-width: 600px) {
       .pdf-frame { height: 400px; }
+      table.score-table thead th,
+      table.score-table tbody th,
+      table.score-table td {
+        padding: 8px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -95,9 +135,51 @@
   <main>
     <section>
       <h2>第1回テトテスト</h2>
-      <p class="notes">以下のリンクをクリックすると、PDFが別タブで開きます。</p>
+      <p class="notes">各大問の平均点・最高点と、問題・解答・全容です。下のリンクをクリックすると、PDFが別タブで開きます。</p>
     </section>
 
+    <!-- 成績表を追加 -->
+    <section>
+      <h3>成績表</h3>
+      <div class="table-wrap">
+        <table class="score-table" aria-label="成績表（平均点・最高点）">
+          <thead>
+            <tr>
+              <th></th>
+              <th>平均点</th>
+              <th>最高点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">第1問</th>
+              <td>4.6</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th scope="row">第2問</th>
+              <td>8.4</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th scope="row">第3問</th>
+              <td>2</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th scope="row">第4問</th>
+              <td>8</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th scope="row">全体</th>
+              <td>23</td>
+              <td>33</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
     <section>
       <h3>1. 問題</h3>
       <a class="pdf-link" href="https://tohkatsu-my.sharepoint.com/:b:/g/personal/hkch23_038_tohkatsu_jp/IQCByVxRNSTvR6-tV6wDeDWPAdWspP0pycPLVwKdgkh5ZnQ?e=9bLLr0" target="_blank" rel="noopener noreferrer">第1回テトテスト - 問題（PDFを開く）</a>
