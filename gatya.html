@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>テトテスト - テトテストガチャ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                   "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+    }
+
+    /* ヘッダー（常に上に固定） */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    /* ヘッダー分の余白 */
+    main {
+      padding-top: 80px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    /* テトテストガチャのタイトル */
+    .gacha-title {
+      text-align: center;
+      font-size: 36px;
+      color: #0066cc;
+      font-weight: bold;
+      margin: 30px 0 40px 0;
+    }
+
+    /* ガチャを回すボタン */
+    .gacha-button {
+      display: block;
+      margin: 30px auto;
+      padding: 15px 40px;
+      background: #ffdd00;
+      color: #000;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .gacha-button:hover {
+      background: #ffeb3b;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .gacha-button:active {
+      transform: scale(0.98);
+    }
+
+    /* 画像表示エリア */
+    .gacha-result {
+      text-align: center;
+      margin: 40px 0;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gacha-result img {
+      max-width: 100%;
+      max-height: 500px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .gacha-result p {
+      color: #999;
+      font-size: 16px;
+    }
+
+    /* スペーサー（10行分の余白） */
+    .spacer {
+      height: 200px;
+    }
+
+    /* トップページに戻るボタン */
+    .btn-back {
+      display: inline-block;
+      padding: 10px 14px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-back:hover {
+      background: #0056b3;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 600px) {
+      .gacha-title {
+        font-size: 28px;
+      }
+
+      .gacha-button {
+        padding: 12px 30px;
+        font-size: 16px;
+      }
+
+      .gacha-result {
+        min-height: 200px;
+      }
+
+      .gacha-result img {
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <img src="logo.jpg" alt="テトテスト ロゴ">
+    <h1>テトテスト</h1>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main>
+    <!-- テトテストガチャタイトル -->
+    <section>
+      <h2 class="gacha-title">テトテストガチャ</h2>
+    </section>
+
+    <!-- ガチャを回すボタン -->
+    <section>
+      <button class="gacha-button" onclick="spinGacha()">ガチャを回す</button>
+    </section>
+
+    <!-- ガチャ結果表示エリア -->
+    <section>
+      <div class="gacha-result" id="gachaResult">
+        <p>ボタンをクリックしてガチャを回してください</p>
+      </div>
+    </section>
+
+    <!-- 余白（約10行分） -->
+    <div class="spacer"></div>
+
+    <!-- トップページに戻るボタン -->
+    <section>
+      <a class="btn-back" href="index.html">← トップページに戻る</a>
+    </section>
+  </main>
+
+  <script>
+    // ガチャで表示する画像のリスト
+    // 必要に応じて、ここに画像ファイル名を追加してください
+    const gachaImages = [
+      'logo.jpg',
+      'top.jpg'
+      // 他の画像ファイル名をここに追加してください
+      // 例: 'image1.jpg', 'image2.jpg', 'image3.jpg'
+    ];
+
+    // ガチャを回す関数
+    function spinGacha() {
+      if (gachaImages.length === 0) {
+        document.getElementById('gachaResult').innerHTML = '<p>表示する画像がありません</p>';
+        return;
+      }
+
+      // ランダムにインデックスを選択
+      const randomIndex = Math.floor(Math.random() * gachaImages.length);
+      const selectedImage = gachaImages[randomIndex];
+
+      // 画像を表示
+      document.getElementById('gachaResult').innerHTML = 
+        `<img src="${selectedImage}" alt="ガチャ結果">`;
+    }
+  </script>
+
+</body>
+</html>
