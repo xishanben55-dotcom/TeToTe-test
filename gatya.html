@@ -91,8 +91,19 @@
       margin: 40px 0;
       min-height: 300px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+    }
+
+    /* 問題番号表示 */
+    .gacha-problem-number {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: left;
+      width: 100%;
+      margin-bottom: 15px;
+      color: #333;
     }
 
     .gacha-result img {
@@ -146,6 +157,10 @@
       .gacha-result img {
         max-height: 300px;
       }
+
+      .gacha-problem-number {
+        font-size: 20px;
+      }
     }
   </style>
 </head>
@@ -179,7 +194,7 @@
 
     <section>
       <p>以下のpdfから解答をご覧ください。</p>
-      <a class="pdf-link" href="https://tohkatsu-my.sharepoint.com/:b:/g/personal/hkch23_038_tohkatsu_jp/IQD4y1_bKtqVRr-EKBQKlw2-AaEBPK6Su57sNbBQoqIh8pc?e=1uGf37" target="_blank" rel="noopener noreferrer">第1～9回テトテスト - 解答まとめ（PDFを開く）</a>
+      <a class="pdf-link" href="https://tohkatsu-my.sharepoint.com/:b:/g/personal/hkch23_038_tohkatsu_jp/IQD4y1_bKtqVRr-EKBQKlw2-AaEBPK6Su57sNbBQoqIh8pc?e=1uGf37" target="_blank" rel="noopener norefer[...]
     </section>
     
 
@@ -216,9 +231,20 @@
       const randomIndex = Math.floor(Math.random() * gachaImages.length);
       const selectedImage = gachaImages[randomIndex];
 
+      // ファイル名から問題番号を抽出
+      // 例: "dai3(2).jpg" → a=3, b=2
+      const match = selectedImage.match(/dai(\d+)\((\d+)\)/);
+      let problemText = '';
+      
+      if (match) {
+        const a = match[1]; // dai の後の数字
+        const b = match[2]; // 括弧内の数字
+        problemText = `<div class="gacha-problem-number">第${a}回第${b}問</div>`;
+      }
+
       // 画像を表示
       document.getElementById('gachaResult').innerHTML = 
-        `<img src="${selectedImage}" alt="ガチャ結果">`;
+        problemText + `<img src="${selectedImage}" alt="ガチャ結果">`;
     }
   </script>
 
