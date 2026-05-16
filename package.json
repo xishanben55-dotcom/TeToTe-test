@@ -1,0 +1,8 @@
+{
+  "name": "tetote-test",
+  "version": "1.0.0",
+  "description": "TeToTe Test",
+  "scripts": {
+    "build": "echo 'No build needed'"
+  }
+}
