@@ -414,9 +414,6 @@
         <input type="password" id="passwordInput" placeholder="パスワードを入力してください">
         <button onclick="checkPassword()">送信</button>
       </div>
-
-      <!-- ローディング表示 -->
-      <div id="loadingMessage" class="loading">検証中...</div>
       
       <!-- エラーメッセージ -->
       <div id="errorMessage" class="error-message">パスワードが正しくありません。</div>
@@ -432,11 +429,9 @@
       const password = document.getElementById('passwordInput').value;
       const answerLinks = document.getElementById('answerLinks');
       const errorMessage = document.getElementById('errorMessage');
-      const loadingMessage = document.getElementById('loadingMessage');
       const linksList = document.getElementById('linksList');
 
       // UI初期化
-      loadingMessage.classList.add('visible');
       errorMessage.classList.remove('visible');
       answerLinks.classList.remove('visible');
 
@@ -449,7 +444,6 @@
         });
 
         const data = await response.json();
-        loadingMessage.classList.remove('visible');
 
         if (data.success && data.links) {
           linksList.innerHTML = data.links
@@ -461,7 +455,6 @@
           errorMessage.classList.add('visible');
         }
       } catch (error) {
-        loadingMessage.classList.remove('visible');
         console.error('エラー:', error);
         errorMessage.textContent = 'サーバーエラーが発生しました。';
         errorMessage.classList.add('visible');
