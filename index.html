@@ -403,9 +403,28 @@
       </ol>
     </section>
 
-    <section>
+        <section>
       <h2>解答・全容閲覧</h2>
       <p>未受験の参加希望者がいる場合、パスワードを入力することで解答・全容を閲覧することができます。</p>
+      
+      <!-- パスワード入力フォーム -->
+      <div class="password-form">
+        <input type="password" id="passwordInput" placeholder="パスワードを入力してください">
+        <button onclick="checkPassword()">送信</button>
+      </div>
+      
+      <!-- エラーメッセージ -->
+      <div id="errorMessage" class="error-message">パスワードが正しくありません。</div>
+      
+      <!-- 解答リンク -->
+      <div id="answerLinks" class="answer-links">
+        <h3>解答・全容</h3>
+        <ul>
+          <li><a href="https://tohkatsu-my.sharepoint.com/:b:/g/personal/260303_tohkatsu_jp/IQCQzSQtSBGNTLP_KNniBaRWAcJ_4Utv19CcopRf0iCPwrw?e=bb7DWP" target="_blank" rel="noopener noreferrer">解答</a></li>
+          <li><a href="https://tohkatsu-my.sharepoint.com/:b:/g/personal/260303_tohkatsu_jp/IQCXQhV2K88GSYNOYiPITGTNAScDjtofBLBsnY9FzoJVUTM?e=gqUv8X" target="_blank" rel="noopener noreferrer">全容</a></li>
+        </ul>
+      </div>
+
     <script>
     function checkPassword() {
       const password = document.getElementById('passwordInput').value;
