@@ -415,33 +415,60 @@
         <button onclick="checkPassword()">送信</button>
       </div>
       
+      <!-- ローディング表示 -->
+      <div id="loadingMessage" class="loading">検証中...</div>
+      
       <!-- エラーメッセージ -->
       <div id="errorMessage" class="error-message">パスワードが正しくありません。</div>
       
       <!-- 解答リンク -->
       <div id="answerLinks" class="answer-links">
         <h3>解答・全容</h3>
-        <ul>
-          
-        </ul>
+        <ul id="linksList"></ul>
       </div>
 
     <script>
-    function checkPassword() {
+    async function checkPassword() {
       const password = document.getElementById('passwordInput').value;
-      const correctPassword = '6-1,11-2'; // ここにパスワードを設定してください
       const answerLinks = document.getElementById('answerLinks');
       const errorMessage = document.getElementById('errorMessage');
+      const loadingMessage = document.getElementById('loadingMessage');
+      const linksList = document.getElementById('linksList');
 
-      if (password === correctPassword) {
-        answerLinks.classList.add('visible');
-        errorMessage.classList.remove('visible');
-      } else {
-        answerLinks.classList.remove('visible');
+      // UI初期化
+      loadingMessage.classList.add('visible');
+      errorMessage.classList.remove('visible');
+      answerLinks.classList.remove('visible');
+
+      try {
+        // バックエンドに検証リクエストを送信
+        const response = await fetch('/.netlify/functions/verify-password', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ password })
+        });
+
+        const data = await response.json();
+        loadingMessage.classList.remove('visible');
+
+        if (data.success && data.links) {
+          linksList.innerHTML = data.links
+            .map(link => `<li><a href="${link.url}" target="_blank" rel="noopener noreferrer">${link.title}</a></li>`)
+            .join('');
+          
+          answerLinks.classList.add('visible');
+        } else {
+          errorMessage.classList.add('visible');
+        }
+      } catch (error) {
+        loadingMessage.classList.remove('visible');
+        console.error('エラー:', error);
+        errorMessage.textContent = 'サーバーエラーが発生しました。';
         errorMessage.classList.add('visible');
       }
     }
 
+    // Enterキーでも送信できるように
     document.getElementById('passwordInput').addEventListener('keypress', function(event) {
       if (event.key === 'Enter') {
         checkPassword();
