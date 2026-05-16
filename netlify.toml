@@ -1,0 +1,7 @@
+[build]
+  command = "npm install"
+  functions = "functions"
+  publish = "."
+
+[env.production]
+  environment = { TETOTE_PASSWORD = "6-1,11-2" }
