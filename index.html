@@ -179,6 +179,26 @@
       display: block;
     }
 
+        /* Netlifyボタン */
+    .netlify-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #00d4ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 16px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .netlify-button:hover {
+      background: #00a8cc;
+    }
+
+
   </style>
 </head>
 
@@ -409,6 +429,9 @@
       <p>未受験の参加希望者がいる場合、受験者のみに公開したパスワードを入力することで解答・全容を閲覧することができます。</p>
       <p>現在は第11回テトテストの解答・全容を閲覧できます。</p>
       <p>https://xishanben55-dotcom.github.io/TeToTe-test/index.htmlではなくhttps://tetote-test.netlify.app/のリンクからでないと解答・全容が閲覧できません。</p>
+      <button class="netlify-button" onclick="window.location.href='https://tetote-test.netlify.app/'">
+        https://tetote-test.netlify.app/を開く
+      </button>
       
       <!-- パスワード入力フォーム -->
       <div class="password-form">
