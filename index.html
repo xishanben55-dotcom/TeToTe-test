@@ -107,6 +107,78 @@
       font-size: 0.95rem;
     }
 
+        /* パスワード入力フォーム */
+    .password-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .password-form input {
+      padding: 8px 12px;
+      border: 1px solid #cfd8dc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .password-form button {
+      padding: 8px 16px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .password-form button:hover {
+      background: #0056b3;
+    }
+
+    /* 解答リンク */
+    .answer-links {
+      display: none;
+      margin-top: 12px;
+    }
+
+    .answer-links.visible {
+      display: block;
+    }
+
+    .answer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .answer-links li {
+      margin: 8px 0;
+    }
+
+    .answer-links a {
+      display: inline-block;
+      padding: 10px 14px;
+      background: #28a745;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .answer-links a:hover {
+      background: #218838;
+    }
+
+    .error-message {
+      color: #dc3545;
+      font-size: 14px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .error-message.visible {
+      display: block;
+    }
+
   </style>
 </head>
 
