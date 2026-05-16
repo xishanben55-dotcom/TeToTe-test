@@ -331,6 +331,29 @@
       </ol>
     </section>
 
+    <script>
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      const correctPassword = 'tetote'; // ここにパスワードを設定してください
+      const answerLinks = document.getElementById('answerLinks');
+      const errorMessage = document.getElementById('errorMessage');
+
+      if (password === correctPassword) {
+        answerLinks.classList.add('visible');
+        errorMessage.classList.remove('visible');
+      } else {
+        answerLinks.classList.remove('visible');
+        errorMessage.classList.add('visible');
+      }
+    }
+
+    document.getElementById('passwordInput').addEventListener('keypress', function(event) {
+      if (event.key === 'Enter') {
+        checkPassword();
+      }
+    });
+  </script>
+
     <!-- フォーム送信 -->
     <section>
       <h2>フォーム</h2>
