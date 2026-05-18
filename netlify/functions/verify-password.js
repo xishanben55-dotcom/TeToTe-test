@@ -30,7 +30,7 @@ exports.handler = async (event) => {
         },
         {
           title: '第11回テトテスト 全容',
-          url: 'https://tohkatsu-my.sharepoint.com/:b:/g/personal/260303_tohkatsu_jp/IQCXQhV2K88GSYNOYiPITGTNAScDjtofBLBsnY9FzoJVUTM?e=gqUv8X'
+          url: process.env.ANSWER_LINK_2
         }
       ];
 
