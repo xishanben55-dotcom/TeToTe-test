@@ -26,7 +26,7 @@ exports.handler = async (event) => {
       const answerLinks = [
         {
           title: '第11回テトテスト 解答',
-          url: process.env.ANSWER_LINK_1,
+          url: process.env.ANSWER_LINK_1
         },
         {
           title: '第11回テトテスト 全容',
