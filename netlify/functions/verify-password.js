@@ -26,7 +26,7 @@ exports.handler = async (event) => {
       const answerLinks = [
         {
           title: '第11回テトテスト 解答',
-          url: 'https://tohkatsu-my.sharepoint.com/:b:/g/personal/260303_tohkatsu_jp/IQCQzSQtSBGNTLP_KNniBaRWAcJ_4Utv19CcopRf0iCPwrw?e=bb7DWP'
+          url: process.env.TETOTE_11_ANSWER_URL,
         },
         {
           title: '第11回テトテスト 全容',
