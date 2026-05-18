@@ -33,7 +33,7 @@ exports.handler = async (event) => {
     const { password } = JSON.parse(event.body);
 
     // 環境変数からパスワードを取得
-    const correctPassword = process.env.TETOTE_PASSWORD || '6-1,11-2';
+    const correctPassword = process.env.TETOTE_PASSWORD;
 
     // パスワードを検証
     if (password === correctPassword) {
