@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>テトテスト第1回～第10回 問題・解答集 - テトテスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                   "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+    }
+
+    /* ヘッダー（常に上に固定） */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    /* ヘッダー分の余白 */
+    main {
+      padding-top: 80px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    section h3 {
+      color: #333;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    /* 商品詳細セクション */
+    .product-detail {
+      border: 1px solid #cfd8dc;
+      border-radius: 8px;
+      padding: 20px;
+      background: #f9f9f9;
+      margin-bottom: 20px;
+    }
+
+    .product-image-container {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .product-image-container img {
+      max-width: 100%;
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+
+    .product-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .product-price-display {
+      font-size: 28px;
+      font-weight: bold;
+      color: #007bff;
+      margin: 16px 0;
+      padding: 16px 0;
+      border-top: 2px solid #eee;
+      border-bottom: 2px solid #eee;
+    }
+
+    .product-description {
+      color: #555;
+      margin: 16px 0;
+      line-height: 1.8;
+    }
+
+    .features {
+      background: #f0f8ff;
+      padding: 16px;
+      border-radius: 6px;
+      margin: 20px 0;
+    }
+
+    .features h4 {
+      margin-top: 0;
+      color: #007bff;
+    }
+
+    .features ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .features li {
+      margin: 8px 0;
+      color: #555;
+    }
+
+    .contents-list {
+      background: #fff9e6;
+      padding: 16px;
+      border-radius: 6px;
+      margin: 20px 0;
+      border-left: 4px solid #ffc107;
+    }
+
+    .contents-list h4 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .contents-list ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    .contents-list li {
+      margin: 6px 0;
+      color: #555;
+    }
+
+    .purchase-button {
+      display: inline-block;
+      padding: 16px 32px;
+      background: #28a745;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 16px 0;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .purchase-button:hover {
+      background: #218838;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #6c757d;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      margin-top: 24px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background: #5a6268;
+    }
+
+    .note {
+      background: #fff3cd;
+      padding: 12px 16px;
+      border-radius: 6px;
+      color: #856404;
+      border-left: 4px solid #ffc107;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 上に固定される部分 -->
+  <header>
+    <img src="logo.jpg" alt="テトテスト ロゴ">
+    <h1>テトテスト</h1>
+  </header>
+
+  <!-- スクロール部分 -->
+  <main>
+
+    <!-- 商品詳細 -->
+    <section>
+      <h2>テトテスト第1回～第10回 問題・解答集</h2>
+
+      <div class="product-detail">
+        <!-- 商品画像 -->
+        <div class="product-image-container">
+          <img src="product1-image.jpg" alt="テトテスト第1回～第10回 問題・解答集">
+        </div>
+
+        <!-- 商品情報 -->
+        <div class="product-info">
+          <div class="product-title">テトテスト第1回～第10回 問題・解答集</div>
+          
+          <div class="product-price-display">¥610（税込）</div>
+
+          <p class="product-description">
+            第1回から第10回までのテトテストの全問題と詳細な解答をまとめた冊子です。
+            各回のテストで出題された記述問題（4～6問、各回満点100点）を完全収録しています。
+          </p>
+
+          <div class="features">
+            <h4>📚 特徴</h4>
+            <ul>
+              <li><strong>完全網羅</strong>：第1回～第10回までのすべての問題と解答を掲載</li>
+              <li><strong>詳細な解説</strong>：各問題に対する丁寧な解答解説付き</li>
+              <li><strong>実戦練習</strong>：過去のテストを復習して実力を底上げ</li>
+              <li><strong>東大対策</strong>：難関大学の入試問題を参考にした良質な問題群</li>
+              <li><strong>コンパクト</strong>：持ち運びやすいサイズで通学・通塾に最適</li>
+            </ul>
+          </div>
+
+          <div class="contents-list">
+            <h4>📖 掲載内容</h4>
+            <ul>
+              <li>第1回テトテスト（問題・解答）</li>
+              <li>第2回テトテスト（問題・解答）</li>
+              <li>第3回テトテスト（問題・解答）</li>
+              <li>第4回テトテスト（問題・解答）</li>
+              <li>第5回テトテスト（問題・解答）</li>
+              <li>第6回テトテスト（問題・解答）</li>
+              <li>第7回テトテスト（問題・解答）</li>
+              <li>第8回テトテスト（問題・解答）</li>
+              <li>第9回テトテスト（問題・解答）</li>
+              <li>第10回テトテスト 東大文系型（問題・解答）</li>
+            </ul>
+          </div>
+
+          <div class="note">
+            <strong>💡 注意:</strong> こちらは冊子版です。ご購入前に必ず商品の仕様をご確認ください。
+          </div>
+
+          <!-- 購入ボタン -->
+          <button class="purchase-button" onclick="alert('申し訳ございません。現在、オンラインでのご購入はまだ対応していません。詳しくはお問い合わせフォームからお気軽にお問い合わせください。')">
+            ご購入はこちら
+          </button>
+
+          <h3>商品情報</h3>
+          <p>
+            <strong>対象者:</strong> テトテストの受験者、数学の実力を伸ばしたい学生<br>
+            <strong>用途:</strong> 復習、実戦練習、入試対策<br>
+            <strong>形式:</strong> 冊子版（B5サイズ）<br>
+            <strong>ページ数:</strong> 約80ページ<br>
+            <strong>価格:</strong> ¥610（税込）
+          </p>
+
+          <h3>ご購入について</h3>
+          <p>
+            現在、こちらの商品のオンライン販売は準備中です。
+            ご購入をご希望の場合は、ホームページ下部の「フォーム」からお気軽にお問い合わせください。
+            お問い合わせいただいた方に詳細な購入方法をご説明させていただきます。
+          </p>
+
+          <h3>ご質問・ご相談</h3>
+          <p>
+            商品に関するご質問やご相談がございましたら、
+            下記のボタンからホームページに戻り、フォームからお気軽にお問い合わせください。
+          </p>
+
+          <button class="back-button" onclick="window.history.back()">
+            ← ホームページに戻る
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
