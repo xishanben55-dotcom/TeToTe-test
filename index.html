@@ -198,7 +198,72 @@
       background: #00a8cc;
     }
 
+    /* 商品紹介セクション */
+    .product-card {
+      border: 1px solid #cfd8dc;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      background: #f9f9f9;
+    }
 
+    .product-card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .product-image {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      margin: 15px 0;
+      border-radius: 6px;
+    }
+
+    .product-description {
+      color: #555;
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+
+    .product-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #007bff;
+      margin: 15px 0;
+    }
+
+    .product-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #28a745;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-link:hover {
+      background: #218838;
+    }
+
+    .back-home-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #6c757d;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .back-home-button:hover {
+      background: #5a6268;
+    }
   </style>
 </head>
 
@@ -492,6 +557,26 @@
       }
     });
   </script>
+    </section>
+
+    <!-- 商品紹介 -->
+    <section>
+      <h2>商品紹介</h2>
+      
+      <div class="product-card">
+        <h3>テトテスト第1回～第10回 問題・解答集</h3>
+        
+        <p class="product-description">
+          第1回から第10回までのテトテストの問題と解答をまとめた冊子です。
+          過去のテストを復習したい方、実力を試したい方におすすめです。
+        </p>
+        
+        <a href="product1.html" class="product-link">商品詳細を見る</a>
+        
+        <p class="product-price">定価：610円</p>
+        
+        <button class="back-home-button" onclick="window.history.back()">ホームページに戻る</button>
+      </div>
     </section>
 
     <!-- フォーム送信 -->
