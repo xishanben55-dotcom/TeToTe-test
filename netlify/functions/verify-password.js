@@ -1,8 +1,4 @@
-// パスワード検証エンドポイント
-// 環境変数から正しいパスワードとリンク情報を取得
-
 exports.handler = async (event) => {
-  // CORSヘッダーを設定
   const headers = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
@@ -10,7 +6,6 @@ exports.handler = async (event) => {
     'Access-Control-Allow-Headers': 'Content-Type'
   };
 
-  // OPTIONSリクエスト対応
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 200,
@@ -19,7 +14,6 @@ exports.handler = async (event) => {
     };
   }
 
-  // POSTリクエストのみ許可
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -29,15 +23,39 @@ exports.handler = async (event) => {
   }
 
   try {
-    // リクエストボディからパスワードを取得
-    const { password } = JSON.parse(event.body);
+    // event.body が既にオブジェクトか文字列かを判定
+    const body = typeof event.body === 'string' 
+      ? JSON.parse(event.body) 
+      : event.body;
+    
+    const { password } = body;
 
-    // 環境変数からパスワードを取得
+    if (!password) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({
+          success: false,
+          error: 'Password is required'
+        })
+      };
+    }
+
     const correctPassword = process.env.TETOTE_PASSWORD;
 
-    // パスワードを検証
+    if (!correctPassword) {
+      console.error('TETOTE_PASSWORD environment variable is not set');
+      return {
+        statusCode: 500,
+        headers,
+        body: JSON.stringify({
+          success: false,
+          error: 'Server configuration error'
+        })
+      };
+    }
+
     if (password === correctPassword) {
-      // パスワードが正しい場合、リンク情報を返す
       const answerLinks = [
         {
           title: '第14回テトテスト 解答',
@@ -58,7 +76,6 @@ exports.handler = async (event) => {
         })
       };
     } else {
-      // パスワードが間違っている場合
       return {
         statusCode: 401,
         headers,
@@ -69,6 +86,7 @@ exports.handler = async (event) => {
       };
     }
   } catch (error) {
+    console.error('Error:', error);
     return {
       statusCode: 500,
       headers,
