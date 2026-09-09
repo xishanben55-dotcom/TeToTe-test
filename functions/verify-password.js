@@ -40,11 +40,11 @@ exports.handler = async (event) => {
       // パスワードが正しい場合、リンク情報を返す
       const answerLinks = [
         {
-          title: '第11回テトテスト 解答',
+          title: '第14回テトテスト 解答',
           url: process.env.ANSWER_LINK_1 || '#'
         },
         {
-          title: '第11回テトテスト 全容',
+          title: '第14回テトテスト 全容',
           url: process.env.ANSWER_LINK_2 || '#'
         }
       ];
