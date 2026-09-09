@@ -23,6 +23,10 @@ exports.handler = async (event) => {
   }
 
   try {
+    // デバッグログ
+    console.log('Event body type:', typeof event.body);
+    console.log('Event body:', event.body);
+
     // event.body が既にオブジェクトか文字列かを判定
     const body = typeof event.body === 'string' 
       ? JSON.parse(event.body) 
@@ -42,6 +46,10 @@ exports.handler = async (event) => {
     }
 
     const correctPassword = process.env.TETOTE_PASSWORD;
+    
+    // デバッグログ：環境変数の確認
+    console.log('Password provided:', password ? '✓ Yes' : '✗ No');
+    console.log('Correct password set:', correctPassword ? '✓ Yes' : '✗ No');
 
     if (!correctPassword) {
       console.error('TETOTE_PASSWORD environment variable is not set');
@@ -50,7 +58,7 @@ exports.handler = async (event) => {
         headers,
         body: JSON.stringify({
           success: false,
-          error: 'Server configuration error'
+          error: 'Server configuration error: TETOTE_PASSWORD not set'
         })
       };
     }
@@ -86,13 +94,14 @@ exports.handler = async (event) => {
       };
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Catch error:', error.message);
+    console.error('Stack:', error.stack);
     return {
       statusCode: 500,
       headers,
       body: JSON.stringify({
         success: false,
-        error: 'Server error'
+        error: 'Server error: ' + error.message
       })
     };
   }
