@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>問題別難易度 - テトテスト</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+                   "Yu Gothic", Meiryo, sans-serif;
+      line-height: 1.8;
+    }
+
+    /* ヘッダー（常に上に固定） */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    /* ヘッダー分の余白 */
+    main {
+      padding-top: 80px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      border-bottom: 2px solid #333;
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    section h3 {
+      margin-top: 32px;
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .description {
+      color: #555;
+      line-height: 1.8;
+      margin: 16px 0;
+    }
+
+    /* テーブルのスタイル */
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 12px;
+    }
+
+    .difficulty-table {
+      width: 100%;
+      border-collapse: collapse;
+      max-width: 900px;
+      margin: 0 auto 24px auto;
+      min-width: 600px;
+      border: 1px solid #cfd8dc;
+    }
+
+    .difficulty-table th,
+    .difficulty-table td {
+      padding: 12px 10px;
+      border: 1px solid #cfd8dc;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .difficulty-table th {
+      background: #e6f3ff;
+      font-weight: 700;
+    }
+
+    .difficulty-table tbody tr:nth-child(odd) {
+      background: #fafafa;
+    }
+
+    .difficulty-table tbody tr:nth-child(even) {
+      background: #ffffff;
+    }
+
+    /* 難易度ランク表示 */
+    .difficulty-rank {
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .difficulty-easy {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .difficulty-normal {
+      background: #cce5ff;
+      color: #004085;
+    }
+
+    .difficulty-hard {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .difficulty-veryhard {
+      background: #d6d8db;
+      color: #383d41;
+    }
+
+    /* ホーム戻るボタン */
+    .back-home-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #6c757d;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+      margin-top: 32px;
+      transition: background 0.2s ease;
+    }
+
+    .back-home-button:hover {
+      background: #5a6268;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 上に固定される部分 -->
+  <header>
+    <img src="logo.jpg" alt="テトテスト ロゴ">
+    <h1>テトテスト</h1>
+  </header>
+
+  <!-- スクロール部分 -->
+  <main>
+
+    <!-- ページタイトル -->
+    <section>
+      <h2>問題別難易度</h2>
+      <p class="description">
+        各回のテトテストにおける問題別の難易度を掲載しています。
+        難易度は「易」「通」「難」「激」の4段階で評価されています。
+        各問題の難易度を参考に、得意な分野や苦手な分野を把握することができます。
+      </p>
+    </section>
+
+    <!-- 難易度一覧テーブル -->
+    <section>
+      <h3>問題別難易度一覧</h3>
+      <div class="table-wrap">
+        <table class="difficulty-table" aria-label="問題別難易度">
+          <thead>
+            <tr>
+              <th>回</th>
+              <th>総評</th>
+              <th>第1問</th>
+              <th>第2問</th>
+              <th>第3問</th>
+              <th>第4問</th>
+              <th>第5問</th>
+              <th>第6問</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>第1回</td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第2回</td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第3回</td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-easy">易</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第4回</td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第5回</td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第6回</td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-easy">易</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第7回</td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第8回</td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第9回</td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-easy">易</span></td>
+              <td><span class="difficulty-rank difficulty-easy">易</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第10回</td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第11回</td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-easy">易</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第12回</td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第13回</td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-normal">通</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>第14回</td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-hard">難</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td><span class="difficulty-rank difficulty-veryhard">激</span></td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- コメントテーブル -->
+    <section>
+      <h3>講評・コメント</h3>
+      <div class="table-wrap">
+        <table class="difficulty-table" aria-label="講評・コメント">
+          <thead>
+            <tr>
+              <th>回</th>
+              <th>コメント</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>第1回</td>
+              <td>初回のため難易度は高めに設定。全体的に難しい問題が多い。</td>
+            </tr>
+            <tr>
+              <td>第2回</td>
+              <td>第5問の難易度が特に高い。計算量が多く、時間管理がポイント。</td>
+            </tr>
+            <tr>
+              <td>第3回</td>
+              <td>全体的にバランスの取れた問題セット。第1問が易しめで導入しやすい。</td>
+            </tr>
+            <tr>
+              <td>第4回</td>
+              <td>前半が通常難易度、後半に難しい問題が集中。</td>
+            </tr>
+            <tr>
+              <td>第5回</td>
+              <td>難易度が非常に高い。全体的に難問揃いで、得点率が低くなりがち。</td>
+            </tr>
+            <tr>
+              <td>第6回</td>
+              <td>バランスの良い問題構成。標準的な難易度で受験の目安になる。</td>
+            </tr>
+            <tr>
+              <td>第7回</td>
+              <td>中盤から難易度上昇。第4,5,6問で点数が決まる傾向。</td>
+            </tr>
+            <tr>
+              <td>第8回</td>
+              <td>全体的に難易度高め。特に第5,6問が難しい。「第8回ショック」と呼ばれる。</td>
+            </tr>
+            <tr>
+              <td>第9回</td>
+              <td>前半が易しく、後半難易度上昇。構成としては受けやすい。</td>
+            </tr>
+            <tr>
+              <td>第10回</td>
+              <td>東大文系型のため全体的に難易度が高い。本番型の難問セット。</td>
+            </tr>
+            <tr>
+              <td>第11回</td>
+              <td>標準的な難易度に戻す。バランスの取れた構成。</td>
+            </tr>
+            <tr>
+              <td>第12回</td>
+              <td>中盤以降難易度上昇。第5,6問が特に難しい。</td>
+            </tr>
+            <tr>
+              <td>第13回</td>
+              <td>後半3問が難関。総合的には中程度の難易度。</td>
+            </tr>
+            <tr>
+              <td>第14回</td>
+              <td>難易度が再度上昇。激難問が4問。次の「ショック」の予兆あり。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ホームに戻るボタン -->
+    <section class="button-container">
+      <a href="index.html" class="back-home-button">ホームに戻る</a>
+    </section>
+
+  </main>
+
+</body>
+</html>
